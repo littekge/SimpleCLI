@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.15...4.0)
-project(CLI)
+project(SimpleCLI)
 
-add_library(CLIlib)
-target_include_directories(CLIlib PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
-target_sources(CLIlib PRIVATE 
+add_library(SimpleCLI)
+target_include_directories(SimpleCLI PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
+target_sources(SimpleCLI PRIVATE 
     "${CMAKE_CURRENT_SOURCE_DIR}/src/Argument.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/Command.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/Interface.cpp"
@@ -11,4 +11,4 @@ target_sources(CLIlib PRIVATE
 )
 
 add_executable(CLItest "CLI_lib_test.cpp")
-target_link_libraries(CLItest PRIVATE CLIlib)
+target_link_libraries(CLItest PRIVATE SimpleCLI)
